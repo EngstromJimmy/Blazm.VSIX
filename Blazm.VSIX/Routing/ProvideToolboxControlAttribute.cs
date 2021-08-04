@@ -29,12 +29,7 @@ namespace BlazmVSIX
         /// <param name="areWPFControls">Indicates whether the toolbox controls are WPF controls.</param>
         public ProvideToolboxControlAttribute(string name, bool areWPFControls)
         {
-            if (name == null)
-            {
-                throw new ArgumentNullException(nameof(name));
-            }
-
-            this.name = name;
+            this.name = name ?? throw new ArgumentNullException(nameof(name));
             this.areWPFControls = areWPFControls;
         }
 
